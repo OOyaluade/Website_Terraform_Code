@@ -121,3 +121,10 @@ resource "aws_security_group_rule" "ssh" {
   security_group_id = aws_security_group.instance_security_groups.id
 }
 
+
+
+resource "aws_route53_record" "a_record" {
+  zone_id = data.aws_route53_zone.personal.zone_id
+  name = "damilstudio.com"
+  type = "A"
+}
